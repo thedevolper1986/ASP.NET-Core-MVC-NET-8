@@ -20,11 +20,11 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      # بناء المشروع، تأكد من تحديد المسار الصحيح لملف الحل أو المشروع
+      # بناء المشروع، تحديد المسار إلى ملف الحل Bulky.sln
       - name: Build with dotnet
         run: dotnet build ./Bulky.sln --configuration Release
 
-      # نشر المشروع بعد البناء، تأكد من تحديد المسار الصحيح أيضاً
+      # نشر المشروع بعد البناء، تحديد المسار إلى ملف الحل Bulky.sln
       - name: dotnet publish
         run: dotnet publish ./Bulky.sln -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
